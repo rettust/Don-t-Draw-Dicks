@@ -1,0 +1,133 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c34;
+}
+
+h1 {
+    background: #7F7FD5;
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#drawingApp {
+    display: none;
+    flex-grow: 1;
+    width: 100%;
+}
+
+#toolbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    padding: 10px;
+    background-color: #202020;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+#toolbar * {
+    margin-right: 5px;
+}
+
+#toolbar label {
+    font-size: 18px;
+}
+
+#toolbar button {
+    background-color: #1565c0;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#toolbar button:hover {
+    background-color: #0d47a1;
+}
+
+#drawingApp {
+    display: none;
+    flex-grow: 1;
+    width: 100%;
+}
+
+canvas {
+    border: 1px solid black;
+    position: relative;
+    background-color: white;
+    width: 100%;
+    top: 10%;
+    height: auto;
+    max-height: calc(100vh - 60px);
+}
+
+#thumbnailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#thumbnails img {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 8px;
+    }
+    #toolbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #toolbar * {
+        margin-right: 2px;
+        margin-bottom: 2px;
+    }
+    #toolbar label {
+        font-size: 12px;
+    }
+    canvas {
+        border: 1px solid black;
+        position: relative;
+        background-color: white;
+        width: 100%;
+        top: 15%;
+        height: auto; /* Keep aspect ratio */
+        max-height: calc(100vh - 60px); /* Ensure the canvas height fits in the viewport */
+    }
+}

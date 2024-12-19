@@ -1,0 +1,42 @@
+﻿<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Don't Draw Dicks, Okay?</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="container">
+        <div id="loginContainer">
+            <h1>Enter Password</h1>
+            <input type="password" id="passwordInput" placeholder="Password">
+            <button id="loginButton">Login</button>
+            <div id="loginMessage" style="color: red; margin-top: 10px;"></div>
+        </div>
+        <div id="thumbnailContainer" style="display: none;">
+            <h2>Previous Drawings</h2>
+            <div id="thumbnails" style="display: flex; flex-wrap: wrap; justify-content: center;"></div>
+        </div>        
+        <div id="drawingApp" style="display: none;">
+            <div id="toolbar">
+                <h1>Draw somethin, would ya.</h1>
+                <label for="stroke">Stroke Color</label>
+                <input id="stroke" name='stroke' type="color">
+                <label for="lineWidth">Line Width</label>
+                <input id="lineWidth" name='lineWidth' type="number" value="5" style="width: 30px;">
+                <button id="clear">Clear</button>
+                <button id="submitButton">Submit</button>
+                <input type="file" id="imageUpload" accept="image/*">
+                <button id="confirmUpload">Upload Image</button>
+                <div id="messageContainer" style="margin-top: 10px; color: green;"></div>
+            </div>
+            <div class="drawing-board">
+                <canvas id="drawing-board"></canvas>
+            </div>
+        </div>
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
